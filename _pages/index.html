@@ -2,3 +2,9 @@
 title: Template
 permalink: /
 ---
+
+<ul>
+    {% for volume in site.volumes %}
+        <li><a href="{{ volume.url }}">{{ volume.title }}</a></li>
+    {% endfor %}
+</ul>
