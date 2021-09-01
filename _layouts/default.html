@@ -26,10 +26,18 @@
     <!-- Icons -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
 
+    <!-- Preload -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
-    {{ content }}
+    {% include header.html %}
+    <main class="main" aria-label="Content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include cookie-banner.html %}
   </body>
 </html>
