@@ -10,6 +10,9 @@ layout: default
 
   <div class="row">
     <div class="col-md-3">
+      {%- if page.image -%}
+        {% picture {{ page.image }} --alt {{ page.title }} --img class="img-fluid" %}
+      {%- endif -%}
     </div>
     <div class="col-md-5">
       {{ content }}
@@ -25,6 +28,7 @@ layout: default
           <dt>Langue</dt>
           <dd>
             {%- for tag in page.tags -%}
+              {% unless forloop.first %},{% endunless %}
               {{tag}}
             {%- endfor -%}
           </dd>
