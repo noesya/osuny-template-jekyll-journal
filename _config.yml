@@ -6,12 +6,6 @@ defaults:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
-      path: ""
-      type: "volumes"
-    values:
-      layout: "volume"
 
 collections:
   pages:
