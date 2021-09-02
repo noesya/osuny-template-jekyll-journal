@@ -26,9 +26,6 @@ collections:
 sass:
     style: compressed
 
-plugins:
-  - jekyll-minifier
-
 jekyll-minifier:
   remove_spaces_inside_tags: true
   remove_multi_spaces: true
@@ -36,3 +33,6 @@ jekyll-minifier:
   remove_comments: true
   compress_css: false
   compress_javascript: true
+
+picture:
+  ignore_missing_images: true
