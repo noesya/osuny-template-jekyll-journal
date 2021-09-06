@@ -47,3 +47,31 @@ layout: default
     </div>
   </div>
 </div>
+
+{%- if page.articles -%}
+<div class="row">
+    <div class="col-md-8">
+      <h2>Table</h2>
+      <ol class="list-unstyled">
+        {%- for articleId in page.articles -%}
+          {%- assign article = site.articles | where:"slug", articleId | first -%}
+          {%- assign modalId = "abstractModal_" | append: forloop.index0 -%}
+          <li class="row flex-md-row-reverse mt-4">
+            <div class="col-md-4 text-md-end">
+              <small class="text-uppercase">Article</small>
+            </div>
+            <div class="col-md-8">
+              <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+              <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
+              <div class="d-grid gap-2 d-md-block">
+                <button type="button" class="btn btn--eye btn-secondary me-md-1" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
+                <button type="button" class="btn btn--download btn-secondary">PDF</button>
+              </div>
+              {% include modal.html target=modalId title=article.title content=article.content %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+</div>
+{%- endif -%}
